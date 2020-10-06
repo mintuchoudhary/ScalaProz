@@ -35,7 +35,7 @@ object DBConnectSparkSession2 {
          connectionProperties.put("driver", ConfigFactory.load().getString("DRIVER"))
 
          val eventData = sparksession.read.jdbc(ConfigFactory.load().getString("ORACLE_URL"),
-           "T_XA_TITAN_UPSTREAM_EVENT",connectionProperties);
+           "EMP",connectionProperties);
 
 
          eventData.printSchema()
@@ -51,13 +51,13 @@ object DBConnectSparkSession2 {
     val dataMap = Map.newBuilder[String, DataFrame]
 
     Try({
-    dataMap.+=("T_XA_TITAN_UPSTREAM_EVENT" -> eventData)
+    dataMap.+=("EMP" -> eventData)
     println(dataMap)
     }) match {
       case Success(s) => print(1)
       case _ => None
     }
-    //val df =  sparksession.sql("SELECT * FROM T_XA_TITAN_UPSTREAM_MSG WHERE LOAD_DATE_D=TRUNC(SYSDATE)")
+    //val df =  sparksession.sql("SELECT * FROM EMP WHERE LOAD_DATE_D=TRUNC(SYSDATE)")
     //df.show()
 
     // Create Sample Dataframe

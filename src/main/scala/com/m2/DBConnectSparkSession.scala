@@ -22,12 +22,12 @@ object DBConnectSparkSession {
         .option("driver",ConfigFactory.load().getString("DRIVER"))
         .option("password", ConfigFactory.load().getString("PASSWORD"))
         .option("user", ConfigFactory.load().getString("USER_NAME")).load()
-        //.option("dbtable", "T_XA_TITAN_UPSTREAM_EVENT").load()
+        //.option("dbtable", "EMP").load()
 
-      eventData.sqlContext.sql("SELECT * FROM T_XA_TITAN_UPSTREAM_EVENT")
+      eventData.sqlContext.sql("SELECT * FROM EMP")
       eventData.printSchema()
       eventData.show()
-      /* val df =  sqlContext.sql("SELECT * FROM T_XA_TITAN_UPSTREAM_MSG WHERE UPSTREAM_MSG_SID_I=370000161729")
+      /* val df =  sqlContext.sql("SELECT * FROM EMP WHERE ID=370000161729")
        df.show()*/
 
     }

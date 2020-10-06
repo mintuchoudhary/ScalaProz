@@ -22,6 +22,7 @@ object DataFrameExample {
   //case class Person(name: String, age: Int, personid : Int)
   var panelDataFrame1: DataFrame = null
   var panelDataFrame2: DataFrame = null
+  System.setProperty("hadoop.home.dir", "D:\\Downloads\\hadoop") //bin/winutil.exe
 
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()

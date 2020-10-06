@@ -1,11 +1,14 @@
-/*package com.m2
+package com.m2
 
 import org.apache.spark
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.col
 
 object sumOnDataFrame {
- def main(args: Array[String]) {
+  System.setProperty("hadoop.home.dir", "D:\\Downloads\\hadoop")
+
+  def main(args: Array[String]) {
    val conf = new SparkConf()
    conf.setAppName("DataFrame Example")
    conf.setMaster("local")
@@ -13,7 +16,7 @@ object sumOnDataFrame {
    import sparkSession.implicits._
 
 
-   vinput = spark.parallelize(Seq(
+   val input = sparkSession.sparkContext.parallelize(Seq(
      ("a", 5, 7, 9, 12, 13),
      ("b", 6, 4, 3, 20, 17),
      ("c", 4, 9, 4, 6, 9),
@@ -27,4 +30,4 @@ object sumOnDataFrame {
    output.show()
  }
 }
-*/
+

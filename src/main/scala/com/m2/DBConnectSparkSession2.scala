@@ -1,4 +1,5 @@
-package com.db
+/*
+package com.m2
 
 import java.util.Properties
 
@@ -85,3 +86,4 @@ object DBConnectSparkSession2 {
 
 
 }
+*/

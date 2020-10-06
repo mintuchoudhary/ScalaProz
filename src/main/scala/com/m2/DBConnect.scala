@@ -1,4 +1,5 @@
-package com.db
+/*
+package com.m2
 
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.{SparkConf, SparkContext}
@@ -66,3 +67,4 @@ trait A {
       }
 
     }
+*/

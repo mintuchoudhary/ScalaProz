@@ -1,4 +1,5 @@
-package com.db
+/*
+package com.m2
 
 import org.apache.spark.sql.SaveMode
 
@@ -14,3 +15,4 @@ object SaveDFTODatabase {
     .mode(SaveMode.Overwrite)
     .save()*/
 }
+*/

@@ -1,4 +1,5 @@
-package com.db
+/*
+package com.m2
 
 
 import com.typesafe.config.ConfigFactory
@@ -33,3 +34,4 @@ object DBConnectSparkSession {
 
 
 }
+*/

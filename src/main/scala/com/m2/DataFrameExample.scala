@@ -1,4 +1,5 @@
-package com.db
+
+package com.m2
 
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -21,7 +22,6 @@ object DataFrameExample {
   //case class Person(name: String, age: Int, personid : Int)
   var panelDataFrame1: DataFrame = null
   var panelDataFrame2: DataFrame = null
-  val NC_NT_NA : List[String] = "NC,NT,NA".split(",").toList
 
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()

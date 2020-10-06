@@ -1,5 +1,5 @@
 package com.m2
 
-object HelloScala extends App {
+object HelloApp extends App {
   println("Hello Scala")
 }

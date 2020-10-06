@@ -42,10 +42,6 @@ object DataFrameExample {
       Array("456", "def", "2001", "ABC"),
       Array("789", "ghi", "2017", "DEF")).toDF("col")
 
-
-
-
-
     println(ds.show)
     println(ds2.show)
   }

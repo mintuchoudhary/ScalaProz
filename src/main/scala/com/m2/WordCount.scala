@@ -17,6 +17,7 @@ object WordCount {
     val wordCountDF = inputData1.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
 
     print(wordCountDF.toDF().show(false))
+    print(wordCountDF.count)
     println("end")
     // sparkSession.stop()
   }

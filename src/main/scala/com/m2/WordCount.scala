@@ -8,6 +8,7 @@ object WordCount {
   def main(args: Array[String]) {
     // val spark = SparkSession.builder().master("local").getOrCreate()
     val sparkSession = SparkSession.builder().appName("word count").master("local").getOrCreate();
+      sparkSession.sparkContext.setLogLevel("WARN")
     import sparkSession.implicits._
 
     // val inputData1 = sparkSession.read.option("header", true).option("delimiter", ",").csv("data.txt")
@@ -16,8 +17,9 @@ object WordCount {
 
     val wordCountDF = inputData1.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
 
-    print(wordCountDF.toDF().show(false))
-    print(wordCountDF.count)
+   // print(wordCountDF.toDF().show(false))
+  //  print(wordCountDF.count)
+    wordCountDF.foreach(x => x._1)
     println("end")
     // sparkSession.stop()
   }

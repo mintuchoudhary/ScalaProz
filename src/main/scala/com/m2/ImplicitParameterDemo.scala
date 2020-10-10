@@ -1,4 +1,6 @@
-
+/**
+implicit parameter are not passed when calling method and are searched in scope, they are declared with implicit keywords, n even method parameter uses implicit. they are like default parameter
+*/
 object ImplicitParameterDemo { 
 
       

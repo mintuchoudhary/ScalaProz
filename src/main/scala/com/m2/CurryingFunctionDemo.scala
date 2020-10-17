@@ -11,8 +11,7 @@ object CurryingFunctionDemo
 
     // Main function 
 
-    def main(args: Array[String]) 
-
+    def main(args: Array[String])
     { 
 
         // Partially Applied function. 

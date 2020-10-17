@@ -5,8 +5,7 @@ object ImplicitParameterDemo {
 
       
 
-    def main(args: Array[String])  
-
+    def main(args: Array[String])
     { 
 
         val value = 10

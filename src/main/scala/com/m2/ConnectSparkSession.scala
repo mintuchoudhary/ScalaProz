@@ -8,7 +8,7 @@ import org.apache.spark
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{SQLContext, SparkSession}
 
-object DBConnectSparkSession {
+object ConnectSparkSession {
 
 
     def main(args: Array[String]) {

@@ -9,7 +9,7 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
  * The purpose of this file to to compress hadoop files (supported format: txt, json, csv, xml)
  * It will compress all the files for given hdfs folder and delete the original files.
  * It also supports to uncompress those files by just providing the hdfs folder
- * Command: sh -x hadoop_compress_utility.sh <HDFSPATH> [Optional: <compression type> | none]
+ * Command: 8 <HDFSPATH> [Optional: <compression type> | none]
  *
  * author: Mintu
  */

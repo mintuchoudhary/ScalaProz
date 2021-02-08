@@ -21,3 +21,33 @@ object PivotDataExample {
     pivotDF.show()
   }
 }
+
+
+/**Output:
+ +-------+------+-------+
+|Product|Amount|Country|
++-------+------+-------+
+| Banana|  1000|    USA|
+|Carrots|  1500|    USA|
+|  Beans|  1600|    USA|
+| Orange|  2000|    USA|
+| Orange|  2000|    USA|
+| Banana|   400|  China|
+|Carrots|  1200|  China|
+|  Beans|  1500|  China|
+| Orange|  4000|  China|
+| Banana|  2000| Canada|
+|Carrots|  2000| Canada|
+|  Beans|  2000| Mexico|
++-------+------+-------+
+
++-------+------+-----+------+----+
+|Product|Canada|China|Mexico| USA|
++-------+------+-----+------+----+
+| Orange|  null| 4000|  null|4000|
+|  Beans|  null| 1500|  2000|1600|
+| Banana|  2000|  400|  null|1000|
+|Carrots|  2000| 1200|  null|1500|
++-------+------+-----+------+----+
+ Here - USA has 2 records for Orange, after sum (2000+2000) the record becomes as 1
+ */

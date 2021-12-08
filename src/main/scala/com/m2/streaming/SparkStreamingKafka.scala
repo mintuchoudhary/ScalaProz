@@ -1,4 +1,4 @@
-package com.m2
+package com.m2.streaming
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.{IntegerType, StringType, StructType}

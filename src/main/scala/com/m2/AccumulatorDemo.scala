@@ -1,3 +1,5 @@
+package com.m2
+
 import org.apache.spark.sql.SparkSession
 
 /**
@@ -13,6 +15,6 @@ object AccumulatorDemo {
     val accum = sc.sparkContext.longAccumulator("SumAccumulator")
 
     sc.sparkContext.parallelize(Array(1, 2, 3)).foreach(x => accum.add(x))
-    println("value=" + accum.value)
+    println("accumulated value=" + accum.value)
   }
 }

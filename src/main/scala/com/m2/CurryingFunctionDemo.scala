@@ -1,6 +1,8 @@
 
 // Scala program add two numbers 
-// using Currying function 
+//Currying is the process of converting a function with multiple arguments into
+// a sequence of functions that take one argument. Each function returns another function
+// that consumes the following argument.
 
 object CurryingFunctionDemo 
 { 

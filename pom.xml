@@ -16,6 +16,12 @@
     </properties>
 
     <dependencies>
+<!--        for kafka setup-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql-kafka-0-10_2.11</artifactId>
+            <version>2.4.0</version>
+        </dependency>
         <!-- scala-maven-plugin determines the Scala version to use from this dependency -->
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -34,6 +40,26 @@
             <artifactId>spark-sql_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>${spark.version}</version>
+<!--            <scope>provided</scope>-->
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.parquet/parquet-hadoop -->
+        <dependency>
+            <groupId>org.apache.parquet</groupId>
+            <artifactId>parquet-hadoop</artifactId>
+            <version>1.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.parquet</groupId>
+            <artifactId>parquet-avro</artifactId>
+            <version>1.11.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>

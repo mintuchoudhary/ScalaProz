@@ -16,7 +16,7 @@ COMPRESSION_TYPE=$2
 
 HADOOP_JAR=$(ls /user/home/mintu/lib/*hadoop-compression-utility-*.jar | tail -1)
  
-echo "Start of CCO_TRADE_INGESTION_SH" >> $LOG_FILE 2>&1
+echo "Start of Spark Job" >> $LOG_FILE 2>&1
 
 /usr/bin/spark2-submit \
  --files=${HIVE_SITE},${LOG_FILE} \

@@ -1,3 +1,4 @@
+import com.m2.utils
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 
@@ -8,7 +9,7 @@ import org.apache.spark.sql.functions._
 object RDDAddColumn {
   def main(args: Array[String]): Unit = {
 
-    val spark = SparkSession.builder().appName("AccumulatorDemo").master("local").getOrCreate()
+    val spark = utils.getSparkSession()
     spark.sparkContext.setLogLevel("ERROR")
     val fileRDD = spark.sparkContext.textFile("src/main/resources/data")
     fileRDD.foreach(println)

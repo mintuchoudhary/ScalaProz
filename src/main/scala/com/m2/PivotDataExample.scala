@@ -1,11 +1,14 @@
 package com.m2
 
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions._
 // Convert row data to columns...
 // note - after pivot method.. some df methods to be called (count, agg, min ,max,sum)
 object PivotDataExample {
   def main(args:Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("pivot data").master("local").getOrCreate();
+    val spark = SparkSession.builder().appName("pivot data")
+      .config("spark.testing.memory", "2147480000")
+      .master("local").getOrCreate();
     spark.sparkContext.setLogLevel("ERROR")
 
     val data = Seq(("Banana",1000,"USA"), ("Carrots",1500,"USA"), ("Beans",1600,"USA"),

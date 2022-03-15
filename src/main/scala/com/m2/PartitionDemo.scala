@@ -13,7 +13,7 @@ object PartitionDemo {
     sparkSession.sparkContext.setLogLevel("WARN")
     import sparkSession.implicits._
 
-    // val inputData1 = sparkSession.read.option("header", true).option("delimiter", ",").csv("data.txt")
+   val inputData1 = sparkSession.read.option("header", true).option("delimiter", ",").csv("data.txt")
     val inputData = sparkSession.sparkContext.textFile("src/main/resources/data.txt").toDF() //rdd
     println(inputData.toDF().show(false))
 

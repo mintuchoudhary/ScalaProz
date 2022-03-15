@@ -14,7 +14,7 @@ object WordCount {
     sparkSession.sparkContext.setLogLevel("WARN")
     import sparkSession.implicits._
 
-    // val inputData1 = sparkSession.read.option("header", true).option("delimiter", ",").csv("data.txt")
+    // val inputData2 = sparkSession.read.option("header", true).option("delimiter", ",").csv("data.txt")
     val inputData1 = sparkSession.sparkContext.textFile("src/main/resources/data.txt")
     println(inputData1.toDF().show(false))
 

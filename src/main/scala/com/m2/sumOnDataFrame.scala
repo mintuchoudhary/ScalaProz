@@ -12,7 +12,9 @@ object sumOnDataFrame {
    val conf = new SparkConf()
    conf.setAppName("DataFrame Example")
    conf.setMaster("local")
-   val sparkSession = SparkSession.builder().appName("ConnectingToOracleDatabase").master("local").getOrCreate();
+   val sparkSession = SparkSession.builder().appName("ConnectingToOracleDatabase")
+     .config("spark.testing.memory", "2147480000")
+     .master("local").getOrCreate();
    import sparkSession.implicits._
 
 
@@ -31,3 +33,15 @@ object sumOnDataFrame {
  }
 }
 
+/**
+ * Input:
+ *
+ * +---+----+----+----+----+----+
+ * | ID|var1|var2|var3|var4|var5|s
+ * +---+----+----+----+----+----+-
+ * |  a|   5|   7|   9|  12|  13|
+ * |  b|   6|   4|   3|  20|  17|
+ * |  c|   4|   9|   4|   6|   9|
+ * |  d|   1|   2|   6|   8|   1|
+ * +---+----+----+----+----+----+-
+ */

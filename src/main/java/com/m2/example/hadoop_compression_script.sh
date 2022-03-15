@@ -18,13 +18,30 @@ HADOOP_JAR=$(ls /user/home/mintu/lib/*hadoop-compression-utility-*.jar | tail -1
  
 echo "Start of Spark Job" >> $LOG_FILE 2>&1
 
+
 /usr/bin/spark2-submit \
  --files=${HIVE_SITE},${LOG_FILE} \
  --jars=${VCLIB_SPARK2_EXTRA} \
  --conf "spark.executor.extraJavaOptions=-DCOMPONENT=$COMPONENT -DENVIRONMENT=$ENVIRONMENT -DCONNECTION=$CONNECTION -DORC_USER=$ORC_USER -DORC_PASS=$ORC_PASS -DDRIVER=$DRIVER -DSCHM_OWNER=$SCHM_OWNER -DHIVE=$HIVE -Dvolcker.crypto.masterKey.path=$MASTER_KEY_PATH -Xss10240k" \
  --conf "spark.driver.extraJavaOptions=-DCOMPONENT=$COMPONENT -DENVIRONMENT=$ENVIRONMENT -DCONNECTION=$CONNECTION -DORC_USER=$ORC_USER -DORC_PASS=$ORC_PASS -DDRIVER=$DRIVER -DSCHM_OWNER=$SCHM_OWNER -DHIVE=$HIVE -Dvolcker.crypto.masterKey.path=$MASTER_KEY_PATH -Xss10240k" \
+ --conf spark.default.parallelism=150 \
+ --conf spark.yarn.am.memoryOverhead=10g \
+ --conf spark.driver.memoryOverhead=10g \
+ --conf spark.executor.memoryOverhead=10g \
+ --conf spark.sql.shuffle.partitions=150 \
+ --conf spark.shuffle.service.enabled=false \
+# --conf spark.yarn.maxAttempts=1 \ default 2
+ --conf spark.dynamicAllocation.enabled=false \
+ --conf spark.app.name=TEST \
+ --conf spark.yarn.appMasterEnv.master_url=yarn \
  --master yarn \
  --deploy-mode cluster \
+# --queue=queue_name_kafka
+ --driver-memory 3G \
+ --driver-cores 5 \
+ --executor-memory 2G \
+ --executor-cores 8 \
+ --num-executors 12 \
  --verbose \
  --class com.volcker.compress.FileToBeCompression ${HADOOP_JAR} $HDFS_PATH $COMPRESSION_TYPE >> $LOG_FILE 2>&1
 

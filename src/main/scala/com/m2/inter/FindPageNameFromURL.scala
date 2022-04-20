@@ -23,11 +23,14 @@ object FindPageNameFromURL {
 
     println("mm_trade_details,field1,group".mkString("__").replace(' ', '_').toLowerCase)
     inputData.toDF("url")
-      .withColumn("splitURL", split(col("url"), "/"))
+      .withColumn("splitURL", lit(getPageName(col("url"))))
       .withColumn("locateURL", locate("/", reverse(col("url"))))
       //.withColumn("pagename",  substring(col("url"),locate("/", reverse(col("url"))).toString().toInt,5))
       .show(false)
   }
+ val getPageName = udf ((url:String)=> {
+   println("url:"+url)
+   url.substring(url.lastIndexOf("/")+1)
 }
 
 /**

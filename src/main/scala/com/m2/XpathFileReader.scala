@@ -19,6 +19,10 @@ object XpathFileReader {
     )
       .setOptionalColToNull(List("a", "b", "c"))
     outData.show(false)
+
+
+    val columnArray = EnricherConstats.COLUMN_LIST.map(value => safeCol(value._1).as(value._2)).toArray
+    data.select(columnArray: _*).show(false)
   }
 
   def safeColumn(df: DataFrame) = (path: String) => {
@@ -43,4 +47,14 @@ object XpathFileReader {
     }
   }
 
+}
+
+object EnricherConstats {
+  val MINERAL_NAME = "mineral.name"
+  val MINERAL_DOSE = "mineral.dose"
+
+  val COLUMN_LIST = Map(
+    MINERAL_NAME -> "MINERAL_NAME",
+    MINERAL_DOSE -> "MINERAL_DOSE"
+  )
 }

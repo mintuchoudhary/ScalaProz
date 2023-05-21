@@ -43,7 +43,7 @@ echo "Start of Spark Job" >> $LOG_FILE 2>&1
  --executor-cores 8 \
  --num-executors 12 \
  --verbose \
- --class com.volcker.compress.FileToBeCompression ${HADOOP_JAR} $HDFS_PATH $COMPRESSION_TYPE >> $LOG_FILE 2>&1
+ --class com.m2.example.FileToBeCompression ${HADOOP_JAR} $HDFS_PATH $COMPRESSION_TYPE >> $LOG_FILE 2>&1
 
 EXIT_CODE=$?
 echo "spark2-submit exit code: ${EXIT_CODE}"

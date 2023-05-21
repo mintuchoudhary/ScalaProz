@@ -1,6 +1,8 @@
 package com.m2.inter
 
 import com.m2.utils
+import org.apache.spark.sql.Row
+import org.apache.spark.sql.expressions.UserDefinedFunction
 import org.apache.spark.sql.functions._
 
 /**
@@ -21,16 +23,25 @@ object FindPageNameFromURL {
     //.foreach(println)
     println("page Name from URL:" + res.toDF("URL_INPUT", "PAGENAME_OUTPUT").show(false))
 
-    println("mm_trade_details,field1,group".mkString("__").replace(' ', '_').toLowerCase)
-    inputData.toDF("url")
+    val outData = inputData.toDF("url")
       .withColumn("splitURL", lit(getPageName(col("url"))))
       .withColumn("locateURL", locate("/", reverse(col("url"))))
-      //.withColumn("pagename",  substring(col("url"),locate("/", reverse(col("url"))).toString().toInt,5))
-      .show(false)
+    //.withColumn("pagename",  substring(col("url"),locate("/", reverse(col("url"))).toString().toInt,5))
+    outData.show(false)
+
+    outData.withColumn("contcatenated",
+      combineUdf(struct(col("url"), col("splitURL")))).show(false)
+
   }
- val getPageName = udf ((url:String)=> {
-   println("url:"+url)
-   url.substring(url.lastIndexOf("/")+1)
+
+  val getPageName = udf((url: String) => {
+    println("url:" + url)
+    url.substring(url.lastIndexOf("/") + 1)
+  })
+
+  def combineUdf: UserDefinedFunction = udf((row: Row) =>
+    row.mkString(", ")
+  )
 }
 
 /**

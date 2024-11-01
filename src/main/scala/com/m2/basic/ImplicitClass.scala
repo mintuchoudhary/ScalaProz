@@ -15,9 +15,9 @@ object ImplicitClass {
     val spark = com.m2.utils.getSparkSession()
     import spark.implicits._
     val goalsDF = Seq(
-      ("meg", 2), ("meg", 4), ("min", 3), ("min2", 1),
+      ("Mg", 2), ("Mg", 4), ("min", 3), ("min2", 1),
       ("ss", 1)).toDF("name", "goals")
-    val nameDF = Seq("meg").toDF("name")
+    val nameDF = Seq("Mg").toDF("name")
     goalsDF.show(false)
     goalsDF
       .withColumn("goals", when(col("goals") === 1, "1 goal").otherwise(concat_ws(" ", col("goals"), lit("goals")))

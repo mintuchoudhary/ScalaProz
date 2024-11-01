@@ -39,7 +39,7 @@ object ReadModeCorruptRecord {
  * col1,col2,col3
  * 102,Mintu,IT
  * try again , network issue
- * 203,Meg,IT
+ * 203,Mg,IT
  * 404 ,: record not found
  * 103,DD,HR
  * connection failure: server not reachable
@@ -49,7 +49,7 @@ object ReadModeCorruptRecord {
  * |id |name |dept|
  * +---+-----+----+
  * |102|Mintu|IT  |
- * |203|Meg  |IT  |
+ * |203|Mg  |IT  |
  * |103|DD   |HR  |
  * +---+-----+----+
  */

@@ -39,18 +39,18 @@ object RDDAddColumn {
 
 /**
  * Mintu,27,Pune
- * Meg,25,PUN
+ * Mg,25,PUN
  * SS,26,Mum
  * DD,17,Chennai
  * (Mintu,27,Pune,Y)
- * (Meg,25,PUN,Y)
+ * (Mg,25,PUN,Y)
  * (SS,26,Mum,Y)
  * (DD,17,Chennai,N)
  * +-----+---+-------+
  * |name |age|city   |
  * +-----+---+-------+
  * |Mintu|27 |Pune   |
- * |Meg  |25 |PUN    |
+ * |Mg  |25 |PUN    |
  * |SS   |26 |Mum    |
  * |DD   |17 |Chennai|
  * +-----+---+-------+
@@ -59,7 +59,7 @@ object RDDAddColumn {
  * | name|age|   city|eligible|
  * +-----+---+-------+--------+
  * |Mintu| 27|   Pune|       Y|
- * |  Meg| 25|    PUN|       Y|
+ * |  Mg| 25|    PUN|       Y|
  * |   SS| 26|    Mum|       Y|
  * |   DD| 17|Chennai|       N|
  * +-----+---+-------+--------+

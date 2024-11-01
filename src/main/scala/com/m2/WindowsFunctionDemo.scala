@@ -10,7 +10,7 @@ object WindowsFunctionDemo {
       ("Mintu", "IT", 4600),
       ("Sandy", "IT", 4100),
       ("Maria", "Finance", 3000),
-      ("Megha", "IT", 3000),
+      ("Mga", "IT", 3000),
       ("Scott", "Finance", 3300),
       ("Jen", "Finance", 3900),
       ("Jeff", "Marketing", 3000),
@@ -43,7 +43,7 @@ object WindowsFunctionDemo {
  * |Kumar        |Marketing |2000  |1         |
  * |Jeff         |Marketing |3000  |2         |
  * |Akash        |IT        |3000  |1         |
- * |Megha        |IT        |3000  |2         |
+ * |Mga        |IT        |3000  |2         |
  * |Sandy        |IT        |4100  |3         |
  * |Dee          |IT        |4100  |4         |
  * |Mintu        |IT        |4600  |5         |
@@ -58,7 +58,7 @@ object WindowsFunctionDemo {
  * |Kumar        |Marketing |2000  |1   |
  * |Jeff         |Marketing |3000  |2   |
  * |Akash        |IT        |3000  |1   |
- * |Megha        |IT        |3000  |1   |
+ * |Mga        |IT        |3000  |1   |
  * |Sandy        |IT        |4100  |3   |
  * |Dee          |IT        |4100  |3   |
  * |Mintu        |IT        |4600  |5   |
@@ -73,7 +73,7 @@ object WindowsFunctionDemo {
  * |Kumar        |Marketing |2000  |1         |
  * |Jeff         |Marketing |3000  |2         |
  * |Akash        |IT        |3000  |1         |
- * |Megha        |IT        |3000  |1         |
+ * |Mga        |IT        |3000  |1         |
  * |Sandy        |IT        |4100  |2         |
  * |Dee          |IT        |4100  |2         |
  * |Mintu        |IT        |4600  |3         |
@@ -88,7 +88,7 @@ object WindowsFunctionDemo {
  * |Kumar        |Marketing |2000  |null|
  * |Jeff         |Marketing |3000  |null|
  * |Akash        |IT        |3000  |null|
- * |Megha        |IT        |3000  |null|
+ * |Mga        |IT        |3000  |null|
  * |Sandy        |IT        |4100  |3000|
  * |Dee          |IT        |4100  |3000|
  * |Mintu        |IT        |4600  |4100|
@@ -103,7 +103,7 @@ object WindowsFunctionDemo {
  * |Kumar        |Marketing |2000  |null|
  * |Jeff         |Marketing |3000  |null|
  * |Akash        |IT        |3000  |4100|
- * |Megha        |IT        |3000  |4100|
+ * |Mga        |IT        |3000  |4100|
  * |Sandy        |IT        |4100  |4600|
  * |Dee          |IT        |4100  |null|
  * |Mintu        |IT        |4600  |null|
